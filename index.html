@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FELIZ CUMPLEAÑOS COÑE  </title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Georgia', serif;
+            background: #faf3ec;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+        }
+        h1, h2 {
+            text-align: center;
+            color: #6B4226;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
+            margin: auto;
+        }
+
+        /* Estilos de la Galería */
+        .gallery-container {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .gallery-slide {
+            display: none;
+        }
+        .gallery-slide img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        .gallery-slide img:hover {
+            transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            user-select: none;
+            transform: translateY(-50%);
+            z-index: 10; /* Asegura que los botones estén por encima de las imágenes */
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* Estilos de la Línea de Tiempo */
+        .timeline-container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .timeline-event {
+            display: none;
+            background-color: #FFFAF0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .timeline-event.active {
+            display: block;
+        }
+        .controls p {
+            margin-bottom: 5px; /* Espacio entre el texto y los botones */
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 600px) {
+            .controls {
+                right: 10px; /* Ajusta la posición en pantallas más pequeñas */
+                top: 10px; 
+            }
+
+            .gallery-slide img {
+                width: 90%; /* Reduce el ancho de las imágenes en pantallas pequeñas */
+            }
+
+            h1, h2 {
+                font-size: 20px; /* Ajusta el tamaño de los títulos para pantallas pequeñas */
+            }
+
+            .timeline-event {
+                font-size: 14px; /* Ajusta el tamaño de fuente en la línea de tiempo */
+            }
+        }
+
+        /* Controles de Música */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los botones y el texto */
+            position: fixed; /* Mantiene los controles fijos en la parte inferior */
+            right: 20px; /* Ajusta la posición desde la derecha */
+            bottom: 20px; /* Ajusta la posición desde la parte inferior */
+            z-index: 1000; /* Asegura que los controles estén por encima del contenido */
+        }
+
+        .controls button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d6bc8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .controls button:hover {
+            background-color: #dbca4a;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎈🎉
+        FELIZ CUMPLEAÑOS COÑE 🎉🎈 </h1>
+
+    <!-- Galería de Fotos -->
+    <div class="gallery-container">
+        <div class="gallery-slide">
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <img src="imagenes/fotoprincipal.jpeg" alt="Foto de ella 1" style="width: 400px;display: block; margin: auto; height: auto;">
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        <div class="gallery-slide">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0; width: 100%;">
+                <img src="imagenes/fotopapa.jpeg" alt="Foto de ella 1" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+                <img src="imagenes/fotomama.jpeg" alt="Foto de ella 2" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+            </div>
+        </div>
+        <div class="gallery-slide">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0; width: 100%;">
+                <img src="imagenes/fotoh1.jpeg" alt="Foto de ella 1" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+                <img src="imagenes/fotoh2.jpeg" alt="Foto de ella 2" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+            </div>
+        </div>
+        <div class="gallery-slide">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0; width: 100%;">
+                <img src="imagenes/776.jpeg" alt="Foto de ella 1" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+                <img src="imagenes/pag4.1.jpeg" alt="Foto de ella 2" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+            </div>
+        </div>
+        <div class="gallery-slide">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0; width: 100%;">
+                <img src="imagenes/pag4.jpeg" alt="Foto de ella 1" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+                <img src="imagenes/pag52.jpeg" alt="Foto de ella 2" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+            </div>
+        </div>
+        <div class="gallery-slide">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0; width: 100%;">
+                <img src="imagenes/pag51.jpeg" alt="Foto de ella 1" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+                <img src="imagenes/pag61.jpeg" alt="Foto de ella 2" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+            </div>
+        </div>
+        <div class="gallery-slide">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0; width: 100%;">
+                <img src="imagenes/FOTO19.jpeg" alt="Foto de ella 1" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+                <img src="imagenes/FOTO20.jpeg" alt="Foto de ella 2" style="height: 300px; object-fit: contain; margin: 0; width: auto;">
+            </div>
+        </div>
+        <!-- Controles de la Galería -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Línea de Tiempo Sincronizada -->
+    <div class="timeline-container">
+        <div class="timeline-event active">
+            <h2>4 de Abril </h2>
+            <p>"Feliz cumpleaños, Coñe! No hay un solo día en el que no agradezca tenerte en mi vida. Tu sonrisa ilumina todo a tu alrededor, y me siento tan afortunado de compartir tantos momentos contigo."</p>
+        </div>
+        <div class="timeline-event">
+            <h2>4 de Abril</h2>
+            <p>"Hoy celebramos tu existencia, Coñe. Cada día a tu lado es un regalo lleno de amor, risas y recuerdos especiales. Te deseo lo mejor en este día tan especial. ¡Feliz cumpleaños!"</p>
+        </div>
+        <div class="timeline-event">
+            <h2>4 de Abril</h2>
+            <p>"A veces no hay palabras suficientes para expresar lo que significas para mí. Hoy es un buen día para decirte que te admiro y te quiero más de lo que imaginas. ¡Feliz cumpleaños, Coñe!"</p>
+        </div>
+        <div class="timeline-event">
+            <h2>4 de Abril</h2>
+            <p>"Hoy es tu día, y quiero que sepas lo increíble que eres. No solo hoy, sino cada día, mereces todo lo bueno que la vida tiene para ofrecer. ¡Feliz cumpleaños, Coñe! Que sea un año lleno de amor y bendiciones."</p>
+        </div>
+        <div class="timeline-event">
+            <h2>4 de Abril</h2>
+            <p>"Siempre he sido testigo de tu grandeza, Coñe. Tu corazón generoso y tu espíritu luchador son inspiradores. Estoy agradecido por tenerte como hermana. ¡Feliz cumpleaños!"</p>
+        </div>
+        <div class="timeline-event">
+            <h2>4 de Abril</h2>
+            <p>"A ti, Coñe, que siempre haces que todo sea más brillante, te deseo un cumpleaños lleno de amor y alegría. Gracias por ser mi hermana, por tus risas y por estar siempre ahí. Te quiero mucho."</p>
+        </div>
+        <div class="timeline-event">
+            <h2>4 de Abril</h2>
+            <p>"Feliz cumpleaños, Coñe. Hoy quiero celebrarte y agradecerte por todo lo que haces por los que te rodean. Tu amor y tu energía hacen del mundo un lugar mejor. Te mereces un día tan especial como tú."</p>
+        </div>
+    </div>
+
+    <!-- Elemento de audio -->
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.gallery-slide');
+            let events = document.querySelectorAll('.timeline-event');
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+
+            // Oculta todas las imágenes y eventos
+            slides.forEach(slide => slide.style.display = 'none');
+            events.forEach(event => event.classList.remove('active'));
+
+            // Muestra la imagen y evento correspondiente al índice actual
+            slides[slideIndex].style.display = 'block';
+            events[slideIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
